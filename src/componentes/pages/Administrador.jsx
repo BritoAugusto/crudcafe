@@ -9,6 +9,7 @@ const Administrador = () => {
 
   useEffect(() => {
     obtenerProductos();
+    
   }, []);
 
   const obtenerProductos = async () => {

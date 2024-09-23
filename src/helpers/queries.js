@@ -14,6 +14,21 @@ export const leerProductoApi = async()=>{
 //PUT O PATH
 //DELETE
 
+export const borrarProductoApi = async (id) => {
+  try {
+    const respuesta = await fetch(URLProducto+'/'+id, {
+      method: "DELETE"
+    });
+
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+
 //POST 
 export const crearProductoApi = async(productoNuevo)=>{
 try {
