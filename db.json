@@ -35,6 +35,33 @@
       "descripcion_breve": "Magnifico",
       "descripcion_amplia": "Excelente cafe",
       "id": "HocjQgr"
+    },
+    {
+      "nombreProducto": "Medialuna",
+      "precio": "500",
+      "imagen": "https://media.istockphoto.com/id/1390211240/es/foto/1-croissants-aislados-sobre-fondo-blanco.jpg",
+      "categoria": "Dulce",
+      "descripcion_breve": "Medialuna de Manteca",
+      "descripcion_amplia": "Una Medialuna de Manteca hecha por las mejores manos de Tucumán.",
+      "id": "4EjDjm_"
+    },
+    {
+      "nombreProducto": "Brownie",
+      "precio": "500",
+      "imagen": "https://media.istockphoto.com/id/178462137/es/foto/croissant-aislado-en-blanco.jpg",
+      "categoria": "Dulce",
+      "descripcion_breve": "Medialuna breve",
+      "descripcion_amplia": "breve medialuna rica\n",
+      "id": "EP3pVBX"
+    },
+    {
+      "nombreProducto": "Brownie",
+      "precio": "1000",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
+      "categoria": "Infusiones",
+      "descripcion_breve": "safafwfqwedasf",
+      "descripcion_amplia": "fqfqwdqweqwe",
+      "id": "rxG5zEq"
     }
   ]
 }
