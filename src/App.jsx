@@ -21,6 +21,7 @@ function App() {
         <Menu></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
+          <Route exact path="/login" element={<Inicio></Inicio>}></Route>
           <Route
             exact
             path="/administrador"
