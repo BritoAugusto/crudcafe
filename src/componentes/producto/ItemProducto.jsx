@@ -1,8 +1,9 @@
 import { Button } from "react-bootstrap";
-import { borrarProductoApi } from "../../helpers/queries";
+import { borrarProductoApi, leerProductoApi } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import FormularioProducto from "./FormularioProducto";
 
-const ItemProducto = ({producto, fila}) => {
+const ItemProducto = ({producto, fila, setListaProductos}) => {
 
   const borrarProducto = ()=>{
 Swal.fire({
@@ -21,9 +22,16 @@ Swal.fire({
     if(respuesta.status === 200){
       Swal.fire({
         title: "Eliminado",
-        text: `El producto ${producto.nombreProducto} fue elminado`,
+        text: `El producto ${producto.nombreProducto} fue elminado correctamente`,
         icon: "success",
       });
+      //actualizar el state del administrador
+      const productoAPI = await leerProductoApi();
+      if (productoAPI.status === 200) {
+        const productosActualizados = await productoAPI.json()
+        setListaProductos(productosActualizados)
+
+      }
 
     }else{
       Swal.fire({
