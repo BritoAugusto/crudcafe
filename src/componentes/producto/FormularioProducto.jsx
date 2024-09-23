@@ -10,10 +10,17 @@ const FormularioProducto = () => {
     reset,
   } = useForm();
 
-  const onSubmit = (producto) => {
+  const onSubmit = async(producto) => {
     console.log(producto);
     //pedir a la api crear el producto
-    crearProductoApi();
+    const respuesta = await crearProductoApi(producto);
+    if (respuesta.status === 201){
+      //mostrar un cartel afirmativo al usuario
+      console.log('se creo el producto')
+      reset();
+    }else{
+      //mostrar un cartel de error al usuario
+    }
   };
   return (
     <section className="container mainSection">
