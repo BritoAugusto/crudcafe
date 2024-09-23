@@ -1,9 +1,8 @@
-import Menu from "./componentes/commons/Menu"
-import Footer from "./componentes/commons/Footer"
-import Inicio from "./componentes/pages/inicio"
-import Administrador from "./componentes/pages/Administrador"
+import Menu from "./componentes/commons/Menu";
+import Footer from "./componentes/commons/Footer";
+import Inicio from "./componentes/pages/inicio";
+import Administrador from "./componentes/pages/Administrador";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -14,20 +13,39 @@ import DetalleProducto from "./componentes/pages/DetalleProducto";
 function App() {
   return (
     <>
-       {/* <Menu></Menu>  */}
-       {/* <Inicio></Inicio> */}
-              {/* <Administrador></Administrador> */}
-       {/* <Footer></Footer>  */}
-       <BrowserRouter>
-       <Menu></Menu>
-       <Routes>
-        <Route exact path="/" element={<Inicio></Inicio>}></Route>
-       </Routes>
-       <Footer></Footer>
-       </BrowserRouter>
-    
+      {/* <Menu></Menu>  */}
+      {/* <Inicio></Inicio> */}
+      {/* <Administrador></Administrador> */}
+      {/* <Footer></Footer>  */}
+      <BrowserRouter>
+        <Menu></Menu>
+        <Routes>
+          <Route exact path="/" element={<Inicio></Inicio>}></Route>
+          <Route
+            exact
+            path="/administrador"
+            element={<Administrador></Administrador>}
+          ></Route>
+          <Route
+            exact
+            path="/administrador/crear"
+            element={<FormularioProducto></FormularioProducto>}
+          ></Route>
+          <Route
+            exact
+            path="/administrador/editar"
+            element={<FormularioProducto></FormularioProducto>}
+          ></Route>
+          <Route
+            path="*"
+            element={<Error404></Error404>}
+          ></Route>
+        </Routes>
+
+        <Footer></Footer>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
