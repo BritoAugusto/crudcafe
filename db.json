@@ -62,6 +62,15 @@
       "descripcion_breve": "safafwfqwedasf",
       "descripcion_amplia": "fqfqwdqweqwe",
       "id": "rxG5zEq"
+    },
+    {
+      "nombreProducto": "Capuccino",
+      "precio": "1500",
+      "imagen": "https://images.pexels.com/photos/143646/pexels-photo-143646.jpeg",
+      "categoria": "Infusiones",
+      "descripcion_breve": "Capuccino ",
+      "descripcion_amplia": "Capuccino con canela\n",
+      "id": "Y_l9YcP"
     }
   ]
 }

@@ -5,34 +5,32 @@ import { useEffect, useState } from "react";
 import { leerProductoApi } from "../../helpers/queries";
 
 const Administrador = () => {
+  const [listaProductos, setListaProductos] = useState([]);
 
- const [listaProductos, setListaProductos]= useState([]);
+  useEffect(() => {
+    obtenerProductos();
+  }, []);
 
-useEffect(()=>{
-obtenerProductos();
-},[])
-
-const obtenerProductos = async()=>{
+  const obtenerProductos = async () => {
     const respuesta = await leerProductoApi();
     console.log(respuesta);
-    if (respuesta.status === 200){
+    if (respuesta.status === 200) {
       const datos = await respuesta.json();
       setListaProductos(datos);
-    }else{
-       Swal.fire({
-         title: "Ocurrio un error",
-         text: `En estos momentos no podemos mostrar la lista de productos, intentá nuevamente más tarde`,
-         icon: "error",
-       });
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `En estos momentos no podemos mostrar la lista de productos, intentá nuevamente más tarde`,
+        icon: "error",
+      });
     }
-}
-
+  };
 
   return (
     <section className="container mainSection">
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Productos disponibles</h1>
-        <Link className="btn btn-primary" to='/administrador/crear'>
+        <Link className="btn btn-primary" to="/administrador/crear">
           <i className="bi bi-file-earmark-plus"></i>
         </Link>
       </div>
@@ -49,10 +47,9 @@ const obtenerProductos = async()=>{
           </tr>
         </thead>
         <tbody>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
+          {listaProductos.map((producto, posicion) =>
+            <ItemProducto key={producto.id} producto={producto} fila={posicion +1}></ItemProducto>
+          )}
         </tbody>
       </Table>
     </section>
