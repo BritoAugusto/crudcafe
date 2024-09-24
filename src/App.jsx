@@ -10,19 +10,26 @@ import FormularioProducto from "./componentes/producto/FormularioProducto";
 import Error404 from "./componentes/pages/Erro404";
 import DetalleProducto from "./componentes/pages/DetalleProducto";
 import Login from "./componentes/pages/Login";
+import { useState } from "react";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("userKey")) || "";
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+
   return (
     <>
-      {/* <Menu></Menu>  */}
-      {/* <Inicio></Inicio> */}
-      {/* <Administrador></Administrador> */}
-      {/* <Footer></Footer>  */}
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu
+          usuarioLogueado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        ></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
-          <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
+          <Route
+            exact
+            path="/detalleProducto"
+            element={<DetalleProducto></DetalleProducto>}
+          ></Route>
           <Route
             exact
             path="/administrador"
@@ -48,7 +55,11 @@ function App() {
               ></FormularioProducto>
             }
           ></Route>
-          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route
+            exact
+            path="/login"
+            element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
+          ></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
 
