@@ -2,7 +2,9 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoApi } from "../../helpers/queries";
 import Swal from "sweetalert2";
-const FormularioProducto = () => {
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+const FormularioProducto = ({titulo, creandoProducto}) => {
   const {
     register,
     handleSubmit,
@@ -10,29 +12,49 @@ const FormularioProducto = () => {
     reset,
   } = useForm();
 
+const {id} = useParams();
+
+  useEffect(()=>{
+if (!creandoProducto) {
+  cargarProducto();
+}
+  },[]);
+
+  const cargarProducto = ()=>{
+    //buscar el producto de la API
+
+    //cargar la respuesta en el formulario
+  }
+
   const onSubmit = async (producto) => {
-    console.log(producto);
-    //pedir a la api crear el producto
-    const respuesta = await crearProductoApi(producto);
-    if (respuesta.status === 201) {
-      //mostrar un cartel afirmativo al usuario
-      reset();
-      Swal.fire({
-        title: "El producto fue creado correctamente",
-        text: `El producto ${producto.nombreProducto},fue creado correctamente`,
-        icon: "success",
-      });
-    } else {
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `No se pudo crear el producto ${producto.nombreProducto}, intente esta operacion en unos minutos`,
-        icon: "error",
-      });
+    if(creandoProducto){
+      console.log(producto);
+      //pedir a la api crear el producto
+      const respuesta = await crearProductoApi(producto);
+      if (respuesta.status === 201) {
+        //mostrar un cartel afirmativo al usuario
+        reset();
+        Swal.fire({
+          title: "El producto fue creado correctamente",
+          text: `El producto ${producto.nombreProducto},fue creado correctamente`,
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `No se pudo crear el producto ${producto.nombreProducto}, intente esta operacion en unos minutos`,
+          icon: "error",
+        });
+
+    }
+    }else{
+      //aqui edito
+      console.log('editando producto')
     }
   };
   return (
     <section className="container mainSection">
-      <h1 className="display-4 mt-5">Nuevo producto</h1>
+      <h1 className="display-4 mt-5">{titulo}</h1>
       <hr />
       <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">

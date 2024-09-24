@@ -9,6 +9,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import FormularioProducto from "./componentes/producto/FormularioProducto";
 import Error404 from "./componentes/pages/Erro404";
 import DetalleProducto from "./componentes/pages/DetalleProducto";
+import Login from "./componentes/pages/Login";
 
 function App() {
   return (
@@ -21,7 +22,6 @@ function App() {
         <Menu></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
-          <Route exact path="/login" element={<Inicio></Inicio>}></Route>
           <Route
             exact
             path="/administrador"
@@ -30,17 +30,25 @@ function App() {
           <Route
             exact
             path="/administrador/crear"
-            element={<FormularioProducto></FormularioProducto>}
+            element={
+              <FormularioProducto
+                titulo="Nuevo producto"
+                creandoProducto={true}
+              ></FormularioProducto>
+            }
           ></Route>
           <Route
             exact
-            path="/administrador/editar"
-            element={<FormularioProducto></FormularioProducto>}
+            path="/administrador/editar/:id"
+            element={
+              <FormularioProducto
+                titulo="Editar producto"
+                creandoProducto={false}
+              ></FormularioProducto>
+            }
           ></Route>
-          <Route
-            path="*"
-            element={<Error404></Error404>}
-          ></Route>
+          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
 
         <Footer></Footer>

@@ -10,15 +10,6 @@
       "id": "f0AdX70"
     },
     {
-      "nombreProducto": "Brownie",
-      "precio": "1000",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Infusiones",
-      "descripcion_breve": "safafwfqwedasf",
-      "descripcion_amplia": "fqfqwdqweqwe",
-      "id": "rxG5zEq"
-    },
-    {
       "nombreProducto": "Capuccino",
       "precio": "1500",
       "imagen": "https://images.pexels.com/photos/143646/pexels-photo-143646.jpeg",
@@ -26,6 +17,15 @@
       "descripcion_breve": "Capuccino ",
       "descripcion_amplia": "Capuccino con canela\n",
       "id": "Y_l9YcP"
+    },
+    {
+      "nombreProducto": "Creep Serrano",
+      "precio": "2500",
+      "imagen": "https://images.pexels.com/photos/17653578/pexels-photo-17653578/free-photo-of-restaurante-beber-bebida-cafeteria.jpeg",
+      "categoria": "salado",
+      "descripcion_breve": "Creep Serrano",
+      "descripcion_amplia": "Creep Serrano Riquisimo\n",
+      "id": "rIS-q4-"
     }
   ]
 }
