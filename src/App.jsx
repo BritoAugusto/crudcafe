@@ -22,6 +22,7 @@ function App() {
         <Menu></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
+          <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
           <Route
             exact
             path="/administrador"

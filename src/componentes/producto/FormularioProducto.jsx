@@ -1,49 +1,52 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { buscarProductoAPI, crearProductoApi } from "../../helpers/queries";
+import { buscarProductoAPI, crearProductoApi, editarProductoApi } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-
-const FormularioProducto = ({titulo, creandoProducto}) => {
+const FormularioProducto = ({ titulo, creandoProducto }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    setValue
+    setValue,
   } = useForm();
 
-const {id} = useParams();
+  const { id } = useParams();
+  const navegacion = useNavigate();
 
-  useEffect(()=>{
-if (!creandoProducto) {
-  cargarProducto();
-}
-  },[]);
-
-  const cargarProducto = async()=>{
-    //buscar el producto de la API
-    const respuesta = await  buscarProductoAPI(id)
-    if (respuesta.status === 200) {
-      const productoEncontrado =  await respuesta.json();
-      console.log(productoEncontrado)
-      //cargar los datos en el formulario
-      setValue('nombreProducto', productoEncontrado.nombreProducto)
-      setValue('precio', productoEncontrado.precio)
-      setValue('imagen', productoEncontrado.imagen)
-      setValue('categoria', productoEncontrado.categoria)
-      setValue('descripcion_breve', productoEncontrado.descripcion_breve)
-      setValue('descripcion_amplia', productoEncontrado.descripcion_amplia)
-    }else{
-
+  useEffect(() => {
+    if (!creandoProducto) {
+      cargarProducto();
     }
-    
-  }
+  }, []);
+
+  const cargarProducto = async () => {
+    //buscar el producto de la API
+    const respuesta = await buscarProductoAPI(id);
+    if (respuesta.status === 200) {
+      const productoEncontrado = await respuesta.json();
+      console.log(productoEncontrado);
+      //cargar los datos en el formulario
+      setValue("nombreProducto", productoEncontrado.nombreProducto);
+      setValue("precio", productoEncontrado.precio);
+      setValue("imagen", productoEncontrado.imagen);
+      setValue("categoria", productoEncontrado.categoria);
+      setValue("descripcion_breve", productoEncontrado.descripcion_breve);
+      setValue("descripcion_amplia", productoEncontrado.descripcion_amplia);
+    } else {
+       Swal.fire({
+         title: "Ocurrio un error",
+         text: `No se pudo obtener el producto, intente esta operacion en unos minutos`,
+         icon: "error",
+       });
+    }
+  };
 
   const onSubmit = async (producto) => {
-    if(creandoProducto){
+    if (creandoProducto) {
       console.log(producto);
       //pedir a la api crear el producto
       const respuesta = await crearProductoApi(producto);
@@ -61,11 +64,26 @@ if (!creandoProducto) {
           text: `No se pudo crear el producto ${producto.nombreProducto}, intente esta operacion en unos minutos`,
           icon: "error",
         });
-
-    }
-    }else{
-      //aqui edito
-      console.log('editando producto')
+      }
+    } else {
+      //enviar el producto a la API
+      //mostramos el mensaje que todo salio bien
+      const respuesta = await editarProductoApi(producto, id);
+      if(respuesta.status === 200){
+        Swal.fire({
+          title: "Producto Editado",
+          text: `El producto ${producto.nombreProducto},fue editado correctamente`,
+          icon: "success",
+        });
+        //redireccionar al admin
+        navegacion('/administrador')
+      }else{
+         Swal.fire({
+           title: "Ocurrio un error",
+           text: `El producto ${producto.nombreProducto},no pudo ser editado. Intente esta operacion en unos minutos`,
+           icon: "error",
+         });
+      }
     }
   };
   return (

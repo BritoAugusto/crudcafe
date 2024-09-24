@@ -1,21 +1,21 @@
 {
   "productos": [
     {
-      "nombreProducto": "Café",
-      "precio": "1500",
+      "nombreProducto": "Café de Especialidad",
+      "precio": "2000",
       "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
       "categoria": "Infusiones",
-      "descripcion_breve": "Una taza magnifica",
-      "descripcion_amplia": "Diseño espectacular",
+      "descripcion_breve": "Una taza magnifica de café de especialidad",
+      "descripcion_amplia": "Diseño espectacular de un cafe colombiano",
       "id": "f0AdX70"
     },
     {
       "nombreProducto": "Capuccino",
-      "precio": "1500",
+      "precio": "2200",
       "imagen": "https://images.pexels.com/photos/143646/pexels-photo-143646.jpeg",
       "categoria": "Infusiones",
       "descripcion_breve": "Capuccino ",
-      "descripcion_amplia": "Capuccino con canela\n",
+      "descripcion_amplia": "Capuccino con canela especial\n",
       "id": "Y_l9YcP"
     },
     {

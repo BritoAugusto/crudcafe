@@ -11,7 +11,7 @@ export const leerProductoApi = async()=>{
         return false;
     }
 }
-//PUT O PATH
+//GET
 
 export const buscarProductoAPI = async (id) => {
   try {
@@ -54,6 +54,23 @@ try {
     console.log(respuesta)
     return respuesta;
     
+} catch (error) {
+    console.error(error)
+    return false;
+}
+}
+
+//PUT O PATH
+export const editarProductoApi = async(productoEditado, id)=>{
+try {
+    const respuesta = await fetch(URLProducto+'/'+id,{
+        method:'PUT',
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(productoEditado)
+    })
+    return respuesta;    
 } catch (error) {
     console.error(error)
     return false;
