@@ -12,6 +12,17 @@ export const leerProductoApi = async()=>{
     }
 }
 //PUT O PATH
+
+export const buscarProductoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(URLProducto+'/'+id);
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
 //DELETE
 
 export const borrarProductoApi = async (id) => {

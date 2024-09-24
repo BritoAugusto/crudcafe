@@ -1,9 +1,11 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoApi } from "../../helpers/queries";
+import { buscarProductoAPI, crearProductoApi } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+
 const FormularioProducto = ({titulo, creandoProducto}) => {
   const {
     register,
@@ -20,10 +22,16 @@ if (!creandoProducto) {
 }
   },[]);
 
-  const cargarProducto = ()=>{
+  const cargarProducto = async()=>{
     //buscar el producto de la API
+    const respuesta = await  buscarProductoAPI(id)
+    if (respuesta.status === 200) {
+      const productoEncontrado =  await respuesta.json();
+      console.log(productoEncontrado)
+    }else{
 
-    //cargar la respuesta en el formulario
+    }
+    
   }
 
   const onSubmit = async (producto) => {
