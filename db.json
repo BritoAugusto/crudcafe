@@ -26,6 +26,15 @@
       "descripcion_breve": "Creep Serrano",
       "descripcion_amplia": "Creep Serrano Riquisimo\n",
       "id": "rIS-q4-"
+    },
+    {
+      "nombreProducto": "Croissant de Jamón Crudo",
+      "precio": "5000",
+      "imagen": "https://images.pexels.com/photos/7390/pexels-photo.jpg",
+      "categoria": "salado",
+      "descripcion_breve": "Croissant de jamon crudo",
+      "descripcion_amplia": "Croissant de Jamón Crudo con rucula, preparado con masa madre.\n",
+      "id": "uD7-KS9"
     }
   ]
 }
