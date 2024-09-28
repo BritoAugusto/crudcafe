@@ -3,7 +3,7 @@ import { useState } from "react";
 import Menu from "./componentes/commons/Menu";
 import Footer from "./componentes/commons/Footer";
 import Inicio from "./componentes/pages/Inicio";
-import Error404 from "./componentes/pages/Erro404";
+import Error404 from "./componentes/pages/Error404";
 import DetalleProducto from "./componentes/pages/DetalleProducto";
 import Login from "./componentes/pages/Login";
 import RutaProtegida from "./componentes/routes/RutaProtegida";
