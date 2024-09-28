@@ -19,7 +19,7 @@ const DetalleProducto = () => {
 
   return (
     <Col md={4} lg={3} className="mb-3 m-auto">
-      <Card className="h-100">
+      <Card className="h-100 text-center">
         <div>
           <img
             src={producto.imagen}
@@ -34,7 +34,7 @@ const DetalleProducto = () => {
           <Card.Text>
             {producto.descripcion_breve}
             <br className="mb-2" />
-            <span className="fw-bold">${producto.precio}</span>
+            <span className="fw-bold ">${producto.precio}</span>
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
