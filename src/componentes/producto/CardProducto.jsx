@@ -13,9 +13,9 @@ const CardProducto = ({producto}) => {
           />
         </div>
         <Card.Body>
-          <Card.Title className="primary-font">${producto.nombreProducto}</Card.Title>
+          <Card.Title className="primary-font">{producto.nombreProducto}</Card.Title>
           <Card.Text>
-            ${producto.descripcion_breve}<br className="mb-2" />
+            {producto.descripcion_breve}<br className="mb-2" />
             <span className="fw-bold">${producto.precio}</span>
           </Card.Text>
         </Card.Body>
