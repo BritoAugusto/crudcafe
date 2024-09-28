@@ -2,14 +2,14 @@ import { Container, Row } from "react-bootstrap";
 import CardProducto from "../producto/CardProducto";
 import { useEffect, useState } from "react";
 import { leerProductoApi } from "../../helpers/queries";
-
+import Swal from "sweetalert2";
 
 const Inicio = () => {
 const [productos, setProductos] = useState([]);
 
  useEffect(() => {
    obtenerProductos();
- });
+ }, []);
 
 const obtenerProductos = async () => {
   const respuesta = await leerProductoApi();
@@ -26,7 +26,7 @@ const obtenerProductos = async () => {
 };
 
   return (
-    <section className="mainSection">
+    <>
       <img
         className="banner"
         src="https://images.pexels.com/photos/13591748/pexels-photo-13591748.jpeg"
@@ -41,7 +41,7 @@ const obtenerProductos = async () => {
           ))}
         </Row>
       </Container>
-    </section>
+    </>
   );
 };
 

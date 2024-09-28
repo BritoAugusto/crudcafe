@@ -1,4 +1,4 @@
-import { Col, Card, Button } from "react-bootstrap";
+import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CardProducto = ({producto}) => {
