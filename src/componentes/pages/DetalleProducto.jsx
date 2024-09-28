@@ -18,23 +18,6 @@ const DetalleProducto = () => {
   }, []);
 
   return (
-    // <div className="maquetadosPaginas">
-    //   <Card>
-    //     <Card.Body>
-    //       <div className="row">
-    //         <div className="col-2">
-    //           <img className="w-100" src={producto.imagen} />
-    //         </div>
-    //         <div className="col-10">
-    //           <Card.Title>
-    //             {producto.nombreProducto} ${producto.precio}{" "}
-    //           </Card.Title>
-    //           <Card.Text>{producto.descripcion_amplia}</Card.Text>
-    //         </div>
-    //       </div>
-    //     </Card.Body>
-    //   </Card>
-    // </div>
     <Col md={4} lg={3} className="mb-3 m-auto">
       <Card className="h-100">
         <div>
