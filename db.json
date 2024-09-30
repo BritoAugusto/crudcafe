@@ -4,7 +4,7 @@
       "nombreProducto": "Café de Especialidad",
       "precio": "2000",
       "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Infusiones",
+      "categoria": "infusiones",
       "descripcion_breve": "Café único, con notas complejas y sabores intensos",
       "descripcion_amplia": "Nuestro café de especialidad proviene de fincas seleccionadas, con procesos artesanales que realzan sus notas únicas y complejas. Cada taza refleja el esfuerzo y la pasión por ofrecer un producto ético y de calidad incomparable.",
       "id": "f0AdX70"
@@ -13,7 +13,7 @@
       "nombreProducto": "Capuccino",
       "precio": "2200",
       "imagen": "https://images.pexels.com/photos/143646/pexels-photo-143646.jpeg",
-      "categoria": "Infusiones",
+      "categoria": "infusiones",
       "descripcion_breve": "Capuccino  de chocolate y canela.",
       "descripcion_amplia": "Capuccino con canela especial, hecho por las mejores manos de la provincia.\n\n",
       "id": "Y_l9YcP"
@@ -40,7 +40,7 @@
       "nombreProducto": "CheeseCake",
       "precio": "3500",
       "imagen": "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
-      "categoria": "Dulce",
+      "categoria": "dulce",
       "descripcion_breve": "CheeseCake de frutos rojos",
       "descripcion_amplia": "ChesseCake con frutos rojos de temporada, suave, cremosa y liviana. La mejor porción de tarta para acompañar un buen café.",
       "id": "DpSpcJu"
