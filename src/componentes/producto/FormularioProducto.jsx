@@ -160,9 +160,9 @@ const FormularioProducto = ({ titulo, creandoProducto }) => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="Infusiones">Infusiones</option>
-            <option value="Batidos">Batidos</option>
-            <option value="Dulce">Dulce</option>
+            <option value="infusiones">Infusiones</option>
+            <option value="batidos">Batidos</option>
+            <option value="dulce">Dulce</option>
             <option value="salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
