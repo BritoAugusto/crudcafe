@@ -19,7 +19,7 @@ const obtenerProductos = async () => {
   } else {
     Swal.fire({
       title: "Ocurrio un error",
-      text: `En estos momentos no podemos mostrar la lista de productos, intentá nuevamente más tarde`,
+      text: "En estos momentos no podemos mostrar la lista de productos, intentá nuevamente más tarde",
       icon: "error",
     });
   }

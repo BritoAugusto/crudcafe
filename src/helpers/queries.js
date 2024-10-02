@@ -1,4 +1,4 @@
-const URLProducto= import.meta.env.VITE_API_PRODUCTO;
+const URLProducto= import.meta.env.VITE_API_PRODUCTO + "/api/productos";
 //Peticiones o solicitudes
 
 //GET
