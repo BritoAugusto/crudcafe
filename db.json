@@ -44,6 +44,15 @@
       "descripcion_breve": "CheeseCake de frutos rojos",
       "descripcion_amplia": "ChesseCake con frutos rojos de temporada, suave, cremosa y liviana. La mejor porción de tarta para acompañar un buen café.",
       "id": "DpSpcJu"
+    },
+    {
+      "nombreProducto": "Batido de Oreo",
+      "precio": "4000",
+      "imagen": "https://images.pexels.com/photos/6160896/pexels-photo-6160896.jpeg",
+      "categoria": "batidos",
+      "descripcion_breve": "Batido de Oreo y galletas cookies",
+      "descripcion_amplia": "Un batido de oreo con un surtido de galletas de distintos sabores, bañado en una suave crema.",
+      "id": "jM2YdPN"
     }
   ]
 }
