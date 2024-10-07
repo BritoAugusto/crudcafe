@@ -35,10 +35,10 @@ const DetalleProducto = () => {
             <p className="fw-bold"> {producto.categoria}</p>
             {producto.descripcion_amplia}
             <br className="mb-2" />
-            <span className="fw-bold ">${producto.precio}</span>
           </Card.Text>
         </Card.Body>
-        <Card.Footer className="text-end">
+        <Card.Footer className="text-center">
+            <span className="fw-bold ">${producto.precio}</span>
           
         </Card.Footer>
       </Card>
